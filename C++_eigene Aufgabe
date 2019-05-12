@@ -1,0 +1,40 @@
+#include <iostream>
+#include <stdio.h>  /*Enthält den Randombefehl*/    
+#include <time.h> /*Notwendig, dass die Zahlen unterschiedlich ausfallen.*/
+
+using namespace std;
+
+int main()
+{
+  int i;
+  int ratezahl = 0;
+  srand(time(NULL)); /*Unterstützt den Randomwert mit der Systemzeit*/
+  int geheimzahl = rand()%11; /*Ermittelt den Randomwert bis 10*/
+  
+  /*Beginn der Aufgabe*/
+  cout << "Welche Zahl von 1-10 ist es? Du hast fünf Versuche. Deine Eingabe:  ";
+  cin >> ratezahl;
+ 
+ /*For-Schleife, welche 5 Möglichkeiten zum Raten gibt.*/ 
+
+for(i=0; i<5; i++)
+{
+  if (geheimzahl<ratezahl)
+  {
+      cout << "Diese Zahl ist zu hoch. Rate nochmal: ";
+      cin >> ratezahl;
+  }
+  
+  else if (geheimzahl>ratezahl)
+  {
+      cout << "Diese Zahl ist zu tief. Rate nochmal: ";
+      cin >> ratezahl;
+  }
+  
+  else if (geheimzahl == ratezahl)
+  {
+      cout << "Glückwunsch! Du hast die Zahl gefunden!";
+        return 0;
+  }
+}
+}
