@@ -1,0 +1,27 @@
+#include <iostream> /*"system" findet sich hier und musss einbezogen werden, damit es abgerufen werden kann*/
+
+using namespace std;
+
+int main()
+{   
+    int max = 0; /*Grenze*/
+    cout << "Deine Grenze:"; /*Ausgabe, um den User nach seiner Grenze zu fragen.*/
+    cin >> max; /*Eingabe des Users für seine Grenze*/
+    
+    if (max >0)
+    {
+        int folge = 0;
+        int summe = 1; /* Folge und Summe werden genutzt immer eine neue Summe zu bilden.*/
+        
+        while (folge <= max)
+        {
+            cout << folge << " ";
+            
+            int tmp_summe = summe + folge;
+            folge = summe;
+            summe = tmp_summe;
+        }
+    }
+    
+    return 0;
+}
